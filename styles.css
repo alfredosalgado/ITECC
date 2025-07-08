@@ -117,7 +117,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+    background: linear-gradient(135deg, rgba(26, 34, 126, 0.568) 0%, rgba(57, 72, 171, 0.753) 50%, rgba(92, 107, 192, 0.596) 100%), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #fff;
     padding: 180px 0 100px;
     min-height: 80vh;
@@ -284,7 +287,7 @@ body {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -424,6 +427,127 @@ body {
     line-height: 1.6;
 }
 
+/* Explore Section */
+.explore-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.explore-content {
+    text-align: center;
+}
+
+.explore-content h2 {
+    font-size: 2.5rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.explore-content .highlight {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.explore-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #ff6b35;
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #1a237e);
+    transition: left 0.5s ease;
+}
+
+.explore-card:hover::before {
+    left: 0;
+}
+
+.explore-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.explore-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #1a237e, #3949ab);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+}
+
+.explore-card:hover .explore-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+}
+
+.explore-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.explore-card h3 {
+    font-size: 1.8rem;
+    color: #1a237e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.explore-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-explore {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-explore:hover {
+    background: transparent;
+    color: #ff6b35;
+    border-color: #ff6b35;
+    transform: translateY(-2px);
+}
+
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
@@ -529,6 +653,19 @@ body {
     color: #ff6b35;
     margin-right: 0.5rem;
     width: 20px;
+}
+
+/* Email and phone links styling */
+.contact-info a {
+    color: #fff !important;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+    color: #ff6b35 !important;
 }
 
 .footer-logo {
@@ -822,7 +959,20 @@ body {
     }
 
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem;
+    }
+
+    .feature-item i {
+        font-size: 2.5rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.2rem;
     }
 
     .sectors-grid {
@@ -831,6 +981,29 @@ body {
 
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+    }
+
+    .explore-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .explore-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .explore-icon i {
+        font-size: 2rem;
+    }
+
+    .explore-card h3 {
+        font-size: 1.5rem;
     }
 
     .contact-content {
@@ -871,6 +1044,52 @@ body {
         line-height: 1.2;
     }
 
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .explore-section {
+        padding: 60px 0;
+    }
+
+    .explore-content h2 {
+        font-size: 2rem;
+    }
+
+    .explore-card {
+        padding: 2rem 1rem;
+    }
+
+    .explore-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .explore-icon i {
+        font-size: 1.8rem;
+    }
+
+    .explore-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .explore-card p {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        padding: 1rem;
+    }
+
+    .feature-item i {
+        font-size: 2rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.1rem;
+    }
+
     .sectors-grid,
     .values-grid {
         grid-template-columns: 1fr;
@@ -889,6 +1108,29 @@ body {
     .btn-primary, .btn-secondary {
         width: 100%;
         max-width: 300px;
+    }
+}
+
+@media (max-width: 340px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .feature-item {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .feature-item i {
+        font-size: 1.8rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1rem;
+    }
+
+    .feature-item p {
+        font-size: 0.9rem;
     }
 }
 
